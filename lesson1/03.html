@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>函数接收参数并弹出</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            #outer{
+                width: 500px;
+                margin: 0px auto;
+            }
+
+            input{
+                width: 200px;
+                height: 20px;
+                display: block;
+                margin: 10px auto;
+                padding: 4px;
+                border: 1px solid #eee;
+            }
+
+            button{
+                display: block;
+                margin: 10px auto;
+
+            }
+        </style>
+
+        <script>
+
+            var myFun = function (a, b) {
+                alert(a.value + "\n" + b.value);
+            };
+            window.onload = function () {
+
+                var oInput = document.getElementsByTagName("input");
+                var oBtn = document.getElementsByTagName("button")[0];
+                oBtn.onclick = function () {
+                    myFun(oInput[0], oInput[1]);
+                };
+            };
+
+        </script>
+    </head>
+    <body>
+        <div id="outer">
+            <input type="text" value="北京市"/>
+            <input type="text" value="朝阳区"/>
+            <button>传  参</button>
+        </div>
+    </body>
+</html>

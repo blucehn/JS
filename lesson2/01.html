@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>百度输入法</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+
+            body{
+                font: 12px/1.5 Tahoma;
+            }
+
+            ul{
+                list-style-type: none;
+            }
+
+            button{
+                cursor: pointer;
+            }
+
+            #outer{
+                width: 70px;
+                margin: 10px auto;
+            }
+
+            #ime{
+                margin-top: 5px;
+                background: #fff;
+                border: 1px solid #9a99ff;
+                display: none;
+            }
+
+            #ime li{
+                width: 100%;
+                line-height: 24px;
+            }
+
+            #ime li a{
+                color: #00c;
+                padding: 0 5px;
+                display: block;
+                text-decoration: none;
+            }
+
+            #ime li a:hover{
+                background: #d9e1f6;
+            }
+
+
+            #close{
+                border-top:1px solid #9a99ff;
+            }
+
+        </style>
+
+        <script>
+            window.onload = function ()
+            {
+                var oBtn = document.getElementsByTagName("button")[0];
+                var oIme = document.getElementById("ime");
+                var oClose = document.getElementById("close");
+                var style = oIme.style;
+                oBtn.onclick = function ()
+                {
+                    style.display = style.display == "block" ? "none" : "block";
+                };
+                oClose.onclick = function ()
+                {
+                    style.display = "none";
+                };
+            };
+        </script>
+
+
+    </head>
+    <body>
+        <div id="outer">
+            <button>输入法</button>
+            <ul id="ime">
+                <li><a href="javascript:">手写</a></li>
+                <li><a href="javascript:">拼音</a></li>
+                <li><a id="close" href="javascript:">关闭</a></li>
+
+            </ul>
+        </div>
+    </body>
+</html>

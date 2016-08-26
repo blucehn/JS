@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>单一按钮显示/隐藏</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            body{
+                font: 12px/1.5 '黑体';
+            }
+            
+            #outer{
+                width: 200px;
+                margin: 10px auto;
+                border: 1px solid #aaa;
+            }
+            
+            h1{
+                cursor: pointer;
+                color: #57646e;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 30px;
+                padding-left: 10px;
+                background: #ced3d7;
+            }
+            
+            #content{
+                overflow: hidden;
+                list-style-type: none;
+            }
+            
+            #content li{
+                height: 25px;
+                line-height: 25px;
+            }
+            
+            #content a{
+                display:block;
+                color:#6b7980;
+                background:#e9edf2;
+                text-decoration:none;
+                padding:0 10px;
+            }
+            
+        </style>
+        
+        <script>
+            
+            $("document").ready(function(){
+                
+                $("h1").click(function(){
+                    $("#content").slideToggle(500);
+                });
+                
+            });
+            
+        </script>
+
+    </head>
+    <body>
+        <div id="outer">
+            <h1>播放列表</h1>
+            <ul id="content">
+                <li><a href="javascript:;">玩家之徒 - 蔡依林</a></li>
+                <li><a href="javascript:;">原谅我就是这样的女生 - 戴佩妮</a></li>
+                <li><a href="javascript:;">猜不透 - 丁当</a></li>
+                <li><a href="javascript:;">自导自演 - 周杰伦</a></li>
+                <li><a href="javascript:;">浪漫窝 - 弦子</a></li>
+                <li><a href="javascript:;">流年 - 王菲</a></li>
+            </ul>
+
+        </div>
+    </body>
+</html>

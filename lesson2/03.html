@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>求出数组中所有数字的和</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+
+            body{
+                font: 12px/1.5 Tahoma;
+                color: #ccc;
+            }
+
+            #outer{
+                width: 500px;
+                margin: 10px auto;
+            }
+
+            #outer input{
+                border: 1px solid #ccc;
+                width: 220px;
+                margin-right: 10px;
+                margin-bottom: 15px;
+                padding: 3px;
+                font-family: inherit;
+            }
+
+            button{
+                padding: 1px 3px;
+            }
+
+            .sum{
+                font-size: 30px;
+                color: red;
+            }
+        </style>
+
+        <script>
+            window.onload = function () {
+
+                var oBtn = document.getElementsByTagName("button")[0];
+                var oIput = document.getElementsByTagName("input")[0];
+                var oStrong = document.getElementsByTagName("strong")[0];
+
+                oBtn.onclick = function () {
+                    var value = oIput.value.split(",");
+                    var sum = 0;
+                    for (var i = 0; i < value.length; i++) {
+                        sum += parseInt(value[i]);
+                    }
+                    oStrong.innerHTML = sum;
+                };
+
+            };
+        </script>
+
+    </head>
+    <body>
+        <div id="outer">
+            <label><input type="text" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"/><span>输入数字求和，数字之间用半角","号分隔</span></label>
+            <p><button>求  和</button></p>
+            <strong class="sum"></strong>
+        </div>
+    </body>
+</html>

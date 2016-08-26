@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>控制div属性</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #content{
+                width: 500px;
+                margin: 0px auto;
+                padding: 0px;
+                text-align: center;
+            }
+
+            #show{
+                width: 100px;
+                height: 100px;
+                background: green;
+                margin: 10px auto;
+                display: block;
+            }
+        </style>
+
+        <script>
+
+            window.onload = function () {
+                var oDiv = document.getElementById("show");
+                var oBtn = document.getElementsByTagName("input");
+                
+                var oAtt = ["width", "height", "background", "display", "display"];
+                var oVal = ["200px","200px","red","none","block"];
+                for (var i = 0; i < oBtn.length; i++) {
+                    oBtn[i].index = i;
+                    oBtn[i].onclick = function (){                        
+                        oDiv.style[oAtt[this.index]] = oVal[this.index];
+                    }
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <div id="content">
+            <input type="button" value='变宽'/>
+            <input type="button" value='变高'/>
+            <input type="button" value='变色'/>
+            <input type="button" value='隐藏'/>
+            <input type="button" value='重置'/>
+
+            <div id="show"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>记住密码提示框</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            body{
+                font:12px/1.5 Tahoma;
+            }
+            
+            #outer{
+                width: 200px;
+                margin: 10px auto;
+            }
+            
+            input{
+                margin-right: 5px;
+                vertical-align: middle;
+            }
+            
+            #tips{
+                padding: 5px;
+                background: #ffefa4;
+                border: 1px solid #f90;
+                margin-top: 5px;
+                display: none;
+            }
+            
+            
+        </style>
+        
+        <script>
+            window.onload = function(){
+                var oTips = document.getElementById("tips");
+                var oLabel = document.getElementsByTagName("label")[0];
+                oLabel.onmouseover = function(){
+                    oTips.style.display = "block";
+                };
+                
+                oLabel.onmouseout = function(){
+                    oTips.style.display = "none";
+                };
+            };
+        </script>
+        
+    </head>
+    <body>
+        <div id="outer">
+            <label><input type="checkbox"/>两周内自动登录</label>
+            <div id="tips">
+                为了您的信息安全,请不要在网吧或者公共电脑上使用此功能!
+            </div>
+        </div>
+    </body>
+</html>

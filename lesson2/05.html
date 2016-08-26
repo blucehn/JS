@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>函数传参</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+
+            body{
+                font: 12px/1.5 '黑体';
+            }
+
+            p{
+                text-align: center;
+            }
+
+            input{
+                width: 150px;
+                height: 17px;
+                padding: 1px 5px;
+                margin: 10px 0px 5px 5px;
+                border: 1px solid #ccc;
+            }
+
+            button{
+                position: relative;
+                width: 80px;
+                margin: 10px 0;
+                padding: 3px 7px;
+                left: 50%;
+            }
+
+            #btn1{
+                margin-left: -90px;
+            }
+
+            #btn2{
+                margin-left: 10px;
+            }
+
+            #outer{
+                margin: 10px auto;
+                width: 180px;
+                height: 180px;
+                background: black;
+                color: white;
+                padding: 10px;
+            }
+
+        </style>
+        
+        
+        <script>
+            window.onload = function(){
+                var oDiv = document.getElementById("outer");
+                var oBtns = document.getElementsByTagName("button");
+                var oInput = document.getElementsByTagName("input");
+                oBtns[0].onclick = function(){
+                    oDiv.style[oInput[0].value] = oInput[1].value; 
+                };
+                
+                oBtns[1].onclick = function(){
+                    oDiv.removeAttribute("style");
+                };
+            };
+        </script>
+    </head>
+    <body>
+        <p>属性名:<input type="text" value="color"/></p>
+        <p>属性值:<input type="text" value="green"/></p>
+        
+        <button id="btn1">确定</button> 
+        <button id="btn2">重置</button>
+        <div id="outer">在上方输入框输入"属性名"及"属性值",点击确定按钮查看效果</div>
+    </body>
+</html>
