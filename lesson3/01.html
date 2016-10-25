@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>用typeof查看数据类型</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            pre{
+                color:green;
+                padding: 10px 15px;
+                background: #f0f0f0;
+                border: 1px dotted #333;
+                font: 12px/1.5 Courier New;
+            }
+            
+            span{
+                
+                color: #999;
+            }
+        </style>
+        
+    </head>
+    <body>
+        
+        <pre>
+            &lt;script type="text/javascript"&gt;
+                alert(typeof 12345);     <span>//输出number</span>
+                alert(typeof "bac");     <span>//输出string</span>
+                alert(typeof document)   <span>//输出object</span>
+            &lt;/script&gt;
+        </pre>
+        
+        <script type="text/javascript">
+            alert("typeof 12345 ->" + typeof 12345 + "\n\ntypeof \"abc\" ->"+ typeof "abc" + "\n\ntypeof document ->" + typeof document);
+        </script>
+        
+    </body>
+</html>

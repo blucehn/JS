@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>累加按钮，自加1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            
+            body{
+                text-align: center;
+            }
+            
+            input{
+                font: 12px/1.5;
+                cursor: pointer;
+                padding: 0 10px;
+            }
+        </style>
+        
+        <script>
+            window.onload = function() {
+                
+                var aBtn = document.getElementsByTagName("input")[0];
+
+                var i = 0;
+                aBtn.onclick = function(){
+                    
+                    aBtn.value = i++;
+                    alert(i);
+                }
+               
+            }
+        </script>
+        
+    </head>
+    <body>
+        <input type="button" value="0"/>
+    </body>
+</html>

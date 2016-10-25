@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>建议网页时钟</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            body{
+                color: #fff;
+                font: 16px/1.5 \5fae\8f6f\96c5\9ed1;
+            }
+            
+            #content{
+                width: 300px;
+                background: #1a1a1a;
+                margin: 10px auto;
+                text-align: center;
+                padding: 20px 0;
+            }
+            
+            #content input{
+                width: 40px;
+                background: #fff;
+                text-align: center;
+                margin-right: 8px;
+                border: 0;
+            }
+        </style>
+        
+        
+        <script>
+            window.onload = function() {
+                var oDiv = document.getElementById("content");
+                var oInputs =document.getElementsByTagName("input");
+                
+                setInterval(getTimes,1000);
+                getTimes();
+                
+                function getTimes(){
+                    var oDate = new Date();
+                    var aDate = [oDate.getHours(),oDate.getMinutes(),oDate.getSeconds()];
+                    for (var i in oInputs) {
+                        oInputs[i].value = formate(aDate[i]);
+                    }
+                }
+                
+                function formate(a){
+                    return a.toString().replace(/^(\d)$/,"0$1");
+                }
+                
+                
+            }
+        </script>
+        
+    </head>
+    <body>
+        <div id="content">
+            <input type="text" value="0" readonly="readonly"/>点
+            <input type="text" value="0" readonly="readonly"/>分
+            <input type="text" value="0" readonly="readonly"/>秒
+        </div>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>判断数字是否为两位数</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            body{
+                text-align: center;
+                font: 12px/1.5 '黑体';
+            }
+            
+            .f-text{
+                width: 50px;
+                border:1px solid #ccc;
+                background: #f0f0f0;
+                padding: 3px;
+                margin-right: 15px;
+            }
+        </style>
+        
+        <script>
+            window.onload = function() {
+                var aInput = document.getElementsByTagName("input");
+                
+                aInput[0].onkeyup = function(){
+                    this.value = this.value.replace(/[^\d]/,"");
+                }
+                
+                aInput[1].onclick = function() {
+                    (aInput[0].value == "") ?
+                    alert("请输入数字") :
+                    alert(/^\d{2}$/.test(parseInt(aInput[0].value)) ? "√ 是两位数" : "这是" + aInput[0].value.length + "位数");
+                }
+            }
+        </script>
+        
+    </head>
+    <body>
+        <input type="text" class="f-text"/>
+        <input type="button" value="是否为两位数"/>
+    </body>
+</html>
